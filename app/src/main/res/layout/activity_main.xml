@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="righiefini.utente.righi.arduino.MainActivity">
+
+    <TextView
+        android:id="@+id/automatica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:text="Automatica"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notifiche"
+        android:text="Notifiche"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/background_dark"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_alignParentRight="true"/>
+    <Button
+        android:id="@+id/modAutomatica"
+        android:layout_below="@+id/automatica"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       />
+    <Switch
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/StatoNotifiche"
+        android:layout_below="@+id/notifiche"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/ip1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3"
+            />
+
+        <EditText
+            android:id="@+id/ip2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ip1"
+            android:inputType="number"
+            android:maxLength="3" />
+
+        <EditText
+            android:id="@+id/ip3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ip2"
+            android:inputType="number"
+            android:maxLength="3" />
+
+        <EditText
+            android:id="@+id/ip4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ip3"
+            android:inputType="number"
+            android:maxLength="3" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Funzioni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ip"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15px">
+
+        <Button
+
+            android:id="@+id/Pompa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pompa" />
+
+        <Button
+
+            android:id="@+id/Ventola"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@+id/Pompa"
+            android:text="ventola" />
+
+        <Button
+            android:id="@+id/dati"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/Ventola"
+            android:text="Dati" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Funzioni"
+        android:gravity="center"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/ESVentola"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8px"
+            android:text="Ventilazione"
+            android:textColor="@android:color/background_dark" />
+
+        <TextView
+            android:id="@+id/ESPompa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/statopompa"
+            android:layout_alignStart="@+id/statopompa"
+            android:layout_marginRight="8px"
+            android:text="Pompa"
+            android:textColor="@android:color/background_dark" />
+
+        <TextView
+            android:id="@+id/umidità"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8px"
+            android:layout_toRightOf="@+id/ESPompa"
+            android:text="Um.Terreno"
+            android:textColor="@android:color/background_dark" />
+
+        <TextView
+            android:id="@+id/temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/umidità"
+            android:text="Temp(°C)"
+            android:textColor="@android:color/background_dark" />
+
+        <TextView
+
+            android:id="@+id/statoventola"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ESVentola"
+            android:layout_marginRight="8px"
+            android:text="stato"
+            tools:text="ventola" />
+
+        <TextView
+            android:id="@+id/statopompa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/valUmidità"
+            android:layout_alignBottom="@+id/valUmidità"
+            android:layout_toEndOf="@+id/ESVentola"
+            android:text="pompa" />
+
+        <TextView
+            android:id="@+id/valUmidità"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/statoventola"
+            android:layout_alignBottom="@+id/statoventola"
+            android:layout_toEndOf="@+id/ESPompa"
+            android:text="valore"
+            tools:text="umidità" />
+
+        <TextView
+            android:id="@+id/valTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/statoventola"
+            android:layout_alignBottom="@+id/statoventola"
+            android:layout_toEndOf="@id/umidità"
+            android:text="valore"
+            tools:text="temperatura" />
+        <TextView
+            android:layout_marginTop="8px"
+            android:layout_marginRight="8px"
+            android:id="@+id/umiditàAria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/statoventola"
+            android:text="Umidità"
+            android:textColor="@android:color/background_dark"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/valUmiditàAria"
+            android:layout_below="@+id/umiditàAria"/>
+        <TextView
+            android:layout_marginTop="8px"
+            android:id="@+id/livAcqua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/statoventola"
+            android:layout_toRightOf="@id/umiditàAria"
+            android:text="Acqua"
+            android:textColor="@android:color/background_dark"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/valAcqua"
+            android:layout_toRightOf="@id/umiditàAria"
+            android:layout_below="@+id/livAcqua"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>
